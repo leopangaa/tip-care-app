@@ -1,5 +1,6 @@
-Mobile Computing Final Project
+// Mobile Computing Final Project
 
+/**
 Current System Tech Stack:
 -React Native
 -TypeScript
@@ -7,3 +8,4 @@ Current System Tech Stack:
 -NativeWind
 -Expo Go
 -WebStorm
+**/
