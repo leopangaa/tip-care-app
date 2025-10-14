@@ -1,5 +1,4 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import Mood from "@/app/(tabs)/mood";
 
 const Journal = () => {
     return (
@@ -12,7 +11,7 @@ const Journal = () => {
 
                 <TouchableOpacity className="w-10 h-10 rounded-full bg-white justify-center items-center shadow">
                     <Image
-                        source={require("@/assets/icons/profile.png")} // replace with your profile icon
+                        source={require("@/assets/icons/profile.png")}
                         className="w-9 h-9"
                         resizeMode="contain"
                     />

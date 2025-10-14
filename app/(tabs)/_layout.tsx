@@ -1,18 +1,23 @@
-import { Tabs } from "expo-router";
-import { Image, Text, View } from "react-native";
-import { icons } from "@/constants/icons";
+import {Tabs} from "expo-router";
+import {Image, Text, View} from "react-native";
+import {icons} from "@/constants/icons";
+import {ImageBackground} from "expo-image";
 
-function TabIcon({ focused, icon, title }: any) {
+function TabIcon({focused, icon, title}: any) {
 
     if (focused) {
         return (
+
             <View className="items-center justify-center mt-1">
-                <Image
-                    source={icon}
-                    className="w-10 h-10"
-                    tintColor="#0077CC"
-                    resizeMode="contain"
-                />
+
+                <View className="bg-gray-200 rounded-2xl p-2">
+                    <Image
+                        source={icon}
+                        className="w-8 h-8"
+                        tintColor="#0077CC"
+                        resizeMode="contain"
+                    />
+                </View>
                 <Text className="text-[8px] mt-1 text-[#0077CC] font-semibold">
                     {title}
                 </Text>
@@ -40,7 +45,7 @@ export default function TabsLayout() {
                 headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: {
-                    backgroundColor: "#E6F0FA", // Light blue background
+                    backgroundColor: "#E6F0FA",
                     borderTopWidth: 0.5,
                     borderTopColor: "#C9D8E6",
                     height: 70,
@@ -54,8 +59,8 @@ export default function TabsLayout() {
                 name="index"
                 options={{
                     title: "Home",
-                    tabBarIcon: ({ focused }) => (
-                        <TabIcon focused={focused} icon={icons.home} title="Home" />
+                    tabBarIcon: ({focused}) => (
+                        <TabIcon focused={focused} icon={icons.home} title="Home"/>
                     ),
                 }}
             />
@@ -64,8 +69,8 @@ export default function TabsLayout() {
                 name="mood"
                 options={{
                     title: "Mood",
-                    tabBarIcon: ({ focused }) => (
-                        <TabIcon focused={focused} icon={icons.mood} title="Mood" />
+                    tabBarIcon: ({focused}) => (
+                        <TabIcon focused={focused} icon={icons.mood} title="Mood"/>
                     ),
                 }}
             />
@@ -74,8 +79,8 @@ export default function TabsLayout() {
                 name="journal"
                 options={{
                     title: "Journal",
-                    tabBarIcon: ({ focused }) => (
-                        <TabIcon focused={focused} icon={icons.journal} title="Journal" />
+                    tabBarIcon: ({focused}) => (
+                        <TabIcon focused={focused} icon={icons.journal} title="Journal"/>
                     ),
                 }}
             />
@@ -84,8 +89,8 @@ export default function TabsLayout() {
                 name="relax"
                 options={{
                     title: "Relax",
-                    tabBarIcon: ({ focused }) => (
-                        <TabIcon focused={focused} icon={icons.relax} title="Relax" />
+                    tabBarIcon: ({focused}) => (
+                        <TabIcon focused={focused} icon={icons.relax} title="Relax"/>
                     ),
                 }}
             />
@@ -94,8 +99,8 @@ export default function TabsLayout() {
                 name="clinics"
                 options={{
                     title: "Clinics",
-                    tabBarIcon: ({ focused }) => (
-                        <TabIcon focused={focused} icon={icons.clinics} title="Clinic" />
+                    tabBarIcon: ({focused}) => (
+                        <TabIcon focused={focused} icon={icons.clinics} title="Clinic"/>
                     ),
                 }}
             />
