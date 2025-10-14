@@ -95,7 +95,7 @@ export default function TabsLayout() {
                 options={{
                     title: "Clinics",
                     tabBarIcon: ({ focused }) => (
-                        <TabIcon focused={focused} icon={icons.clinics} title="Clinics" />
+                        <TabIcon focused={focused} icon={icons.clinics} title="Clinic" />
                     ),
                 }}
             />
