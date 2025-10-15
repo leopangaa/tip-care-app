@@ -53,7 +53,8 @@ export default function TabsLayout() {
                     paddingTop: 8,
                     justifyContent: "space-between",
                 },
-            }}
+            }
+        }
         >
             <Tabs.Screen
                 name="index"

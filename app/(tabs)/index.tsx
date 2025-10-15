@@ -1,8 +1,11 @@
 import {View, Text, Image, TouchableOpacity, ScrollView} from "react-native";
+import {useRouter} from "expo-router";
 
 export default function Index() {
+    const router = useRouter();
+
     return (
-        <View className="flex-1 bg-white">
+        <View className="flex-1 bg-blue-100">
             <View
                 className="bg-[#E6F0FA] rounded-b-3xl px-6 pt-12 pb-6 flex-row justify-between items-center shadow-sm">
                 <View>
@@ -31,7 +34,7 @@ export default function Index() {
                         resizeMode="contain"
                         tintColor="#0077CC"
                     />
-                    <Text className="text-[#0077CC] font-medium text-[19px]">
+                    <Text className="text-[#0077CC] font-medium text-[15px]">
                         Monday, October 6, 2025
                     </Text>
                 </View>
@@ -49,7 +52,9 @@ export default function Index() {
                     <Text className="text-gray-600 text-sm mb-4">
                         Take a moment to check in with yourself. How are you feeling today?
                     </Text>
-                    <TouchableOpacity className="bg-[#0077CC] rounded-xl py-3 items-center">
+                    <TouchableOpacity
+                        onPress={() => router.push("/mood")}
+                        className="bg-[#0077CC] rounded-xl py-3 items-center">
                         <View className="flex-row items-center">
                             <Image
                                 source={require("@/assets/icons/star.png")}
@@ -68,7 +73,9 @@ export default function Index() {
 
                 <View>
                     <View className="mb-2">
-                        <TouchableOpacity className="bg-white rounded-xl p-4 flex-row items-center shadow">
+                        <TouchableOpacity
+                            onPress={() => router.push("/mood")}
+                            className="bg-white rounded-xl p-4 flex-row items-center shadow">
                             <Image
                                 source={require("@/assets/icons/mood.png")}
                                 className="w-10 h-10 mr-3"
@@ -81,7 +88,9 @@ export default function Index() {
                         </TouchableOpacity>
                     </View>
                     <View className="mb-2">
-                        <TouchableOpacity className="bg-white rounded-xl p-4 flex-row items-center shadow">
+                        <TouchableOpacity
+                            onPress={() => router.push("/journal")}
+                            className="bg-white rounded-xl p-4 flex-row items-center shadow">
                             <Image
                                 source={require("@/assets/icons/journal.png")}
                                 className="w-10 h-10 mr-3"
@@ -95,7 +104,9 @@ export default function Index() {
                     </View>
 
                     <View className="mb-2">
-                        <TouchableOpacity className="bg-white rounded-xl p-4 flex-row items-center shadow">
+                        <TouchableOpacity
+                            onPress={() => router.push("/relax")}
+                            className="bg-white rounded-xl p-4 flex-row items-center shadow">
                             <Image
                                 source={require("@/assets/icons/relax.png")}
                                 className="w-10 h-10 mr-3"
@@ -117,7 +128,9 @@ export default function Index() {
 
                 <View className="space-y-3 mb-10">
                     <View className="mb-2">
-                        <TouchableOpacity className="bg-white rounded-xl p-4 flex-row items-center shadow">
+                        <TouchableOpacity
+                            onPress={() => router.push("/emergency")}
+                            className="bg-white rounded-xl p-4 flex-row items-center shadow">
                             <Image
                                 source={require("@/assets/icons/emergency.png")}
                                 className="w-10 h-10 mr-3"
@@ -135,7 +148,9 @@ export default function Index() {
                     </View>
 
                     <View className="mb-2">
-                        <TouchableOpacity className="bg-white rounded-xl p-4 flex-row items-center shadow">
+                        <TouchableOpacity
+                            onPress={() => router.push("/clinics")}
+                            className="bg-white rounded-xl p-4 flex-row items-center shadow">
                             <Image
                                 source={require("@/assets/icons/clinics.png")}
                                 className="w-10 h-10 mr-3"
