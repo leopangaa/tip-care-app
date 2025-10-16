@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="INDEX UI UPDATE">
-      <change afterPath="$PROJECT_DIR$/assets/icons/note.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/trash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/SearchBar.tsx" afterDir="false" />
+    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="JOURNAL PAGE UPDATE (NOT FINISHED)">
+      <change afterPath="$PROJECT_DIR$/assets/icons/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/phone-call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/world-wide-web.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/clinics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/clinics.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/journal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/journal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/mood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/mood.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/relax.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/relax.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/emergency.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/emergency.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,28 +27,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "assignee": "leopangaa"
+      &quot;assignee&quot;: &quot;leopangaa&quot;
     }
   ],
-  "lastFilter": {
-    "assignee": "leopangaa"
+  &quot;lastFilter&quot;: {
+    &quot;assignee&quot;: &quot;leopangaa&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/leopangaa/tip-care-app.git",
-    "accountId": "f57c395a-0e82-4dcd-b635-f84f0834327f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/leopangaa/tip-care-app.git&quot;,
+    &quot;accountId&quot;: &quot;f57c395a-0e82-4dcd-b635-f84f0834327f&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="341IyRF4ONcvj9h7jlJcv0eYQ7X" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -55,25 +57,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/earlc/WebstormProjects/tip-care-app/assets/icons",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\earlc\\WebstormProjects\\tip-care-app\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/earlc/WebstormProjects/tip-care-app/assets/icons&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\earlc\\WebstormProjects\\tip-care-app\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -108,7 +110,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760374906548</updated>
-      <workItem from="1760374907279" duration="45769000" />
+      <workItem from="1760374907279" duration="48436000" />
+      <workItem from="1760570620715" duration="12722000" />
     </task>
     <task id="LOCAL-00001" summary="First progress react native TIP care app">
       <option name="closed" value="true" />
@@ -142,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760473590562</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="JOURNAL PAGE UPDATE (NOT FINISHED)">
+      <option name="closed" value="true" />
+      <created>1760523815812</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760523815812</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +164,7 @@
     <MESSAGE value="Push Test" />
     <MESSAGE value="Added Unversioned Files" />
     <MESSAGE value="INDEX UI UPDATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="INDEX UI UPDATE" />
+    <MESSAGE value="JOURNAL PAGE UPDATE (NOT FINISHED)" />
+    <option name="LAST_COMMIT_MESSAGE" value="JOURNAL PAGE UPDATE (NOT FINISHED)" />
   </component>
 </project>
