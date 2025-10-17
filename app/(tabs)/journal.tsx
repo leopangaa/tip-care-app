@@ -67,24 +67,24 @@ const Journal = () => {
                                 <Text className="text-[#0077CC] font-semibold text-[20px]">
                                     MIDTERM EXAM WEEK</Text>
                             </View>
-                            <TouchableOpacity>
-                                <View>
-                                    <Image
-                                        source={require("@/assets/icons/note.png")}
-                                        className="w-7 h-7 mr-2 ml-16"
-                                        resizeMode="contain"
+                                <TouchableOpacity>
+                                    <View>
+                                        <Image
+                                            source={require("@/assets/icons/note.png")}
+                                            className="w-7 h-7 mr-2 ml-16"
+                                            resizeMode="contain"
                                         />
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View>
-                                    <Image
-                                        source={require("@/assets/icons/trash.png")}
-                                        className="w-7 h-7 mr-2"
-                                        resizeMode="contain"
-                                    />
-                                </View>
-                            </TouchableOpacity>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <View>
+                                        <Image
+                                            source={require("@/assets/icons/trash.png")}
+                                            className="w-7 h-7 mr-2"
+                                            resizeMode="contain"
+                                        />
+                                    </View>
+                                </TouchableOpacity>
                         </View>
 
                         <View

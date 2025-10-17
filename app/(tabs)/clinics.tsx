@@ -101,8 +101,8 @@ const Clinics = () => {
                             </View>
                         </View>
                         <View className="flex-row items-center mt-5 justify-center mx-5">
-                            <View className="bg-blue-500 rounded-2xl mr-16">
-                                <TouchableOpacity className="flex-row items-center p-4">
+                            <View className="bg-blue-500 rounded-2xl p-4 mr-4">
+                                <TouchableOpacity className="flex-row items-center">
                                     <Image
                                         source={require("@/assets/icons/phone-call.png")}
                                         className="w-4 h-4 mr-1"
@@ -112,8 +112,8 @@ const Clinics = () => {
                                     <Text className="text-white font-bold">(02) 8-531-9001</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View className="bg-blue-500 rounded-2xl">
-                                <TouchableOpacity className="flex-row items-center p-4">
+                            <View className="bg-blue-500 rounded-2xl p-4">
+                                <TouchableOpacity className="flex-row items-center">
                                     <Image
                                         source={require("@/assets/icons/world-wide-web.png")}
                                         className="w-4 h-4 mr-1"

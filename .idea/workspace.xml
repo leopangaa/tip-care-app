@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="JOURNAL PAGE UPDATE (NOT FINISHED)">
-      <change afterPath="$PROJECT_DIR$/assets/icons/clock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/location.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/phone-call.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/world-wide-web.png" afterDir="false" />
+    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="JOURNAL AND CLINICS PAGE UI UPDATE">
+      <change afterPath="$PROJECT_DIR$/app/(auth)/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/signup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/clinics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/clinics.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/journal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/journal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/mood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/mood.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/relax.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/relax.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/emergency.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/emergency.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/emergency.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +60,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
@@ -71,6 +70,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\earlc\\WebstormProjects\\tip-care-app\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -90,10 +90,11 @@
       <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\assets\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\app\register" />
+      <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\app" />
+      <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\app\(screens)" />
       <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\assets\icons" />
       <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\assets\images" />
-      <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\app" />
-      <recent name="C:\Users\earlc\WebstormProjects\tip-care-app\app\(tabs)" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -111,7 +112,9 @@
       <option name="presentableId" value="Default" />
       <updated>1760374906548</updated>
       <workItem from="1760374907279" duration="48436000" />
-      <workItem from="1760570620715" duration="12722000" />
+      <workItem from="1760570620715" duration="14255000" />
+      <workItem from="1760585398656" duration="938000" />
+      <workItem from="1760587180994" duration="39501000" />
     </task>
     <task id="LOCAL-00001" summary="First progress react native TIP care app">
       <option name="closed" value="true" />
@@ -153,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760523815812</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="JOURNAL AND CLINICS PAGE UI UPDATE">
+      <option name="closed" value="true" />
+      <created>1760583788928</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760583788928</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +176,7 @@
     <MESSAGE value="Added Unversioned Files" />
     <MESSAGE value="INDEX UI UPDATE" />
     <MESSAGE value="JOURNAL PAGE UPDATE (NOT FINISHED)" />
-    <option name="LAST_COMMIT_MESSAGE" value="JOURNAL PAGE UPDATE (NOT FINISHED)" />
+    <MESSAGE value="JOURNAL AND CLINICS PAGE UI UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="JOURNAL AND CLINICS PAGE UI UPDATE" />
   </component>
 </project>

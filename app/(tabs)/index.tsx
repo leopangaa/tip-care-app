@@ -1,7 +1,7 @@
 import {View, Text, Image, TouchableOpacity, ScrollView} from "react-native";
 import {useRouter} from "expo-router";
 
-export default function Index() {
+const Index = () => {
     const router = useRouter();
 
     return (
@@ -148,7 +148,7 @@ export default function Index() {
                 <View className="space-y-3 mb-10">
                     <View className="mb-2">
                         <TouchableOpacity
-                            onPress={() => router.push("/emergency")}
+                            onPress={() => router.push("/clinics")}
                             className="bg-white rounded-xl p-4 flex-row items-center shadow">
                             <Image
                                 source={require("@/assets/icons/emergency.png")}
@@ -189,3 +189,5 @@ export default function Index() {
 
     );
 }
+
+export default Index;
