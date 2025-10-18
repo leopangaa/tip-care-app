@@ -1,4 +1,4 @@
-import {Stack} from "expo-router";
+import {SplashScreen, Stack} from "expo-router";
 import "./global.css";
 import {StatusBar} from "react-native";
 
@@ -7,7 +7,10 @@ export default function RootLayout() {
         <>
             <StatusBar hidden={true}/>
 
-            <Stack screenOptions={{headerShown: false}}>
+            <Stack initialRouteName="SplashScreen" screenOptions={{headerShown: false}}>
+                <Stack.Screen
+                    name="SplashScreen"
+                />
                 <Stack.Screen
                     name="(auth)"
                 />

@@ -52,6 +52,7 @@ export default function TabsLayout() {
                     paddingTop: 8,
                     justifyContent: "space-between",
                 },
+                animation: "shift"
             }
         }
         >

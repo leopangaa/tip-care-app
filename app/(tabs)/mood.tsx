@@ -1,6 +1,8 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
+import React, {useState} from "react";
 
 const Mood = () => {
+
     return (
         <View className="flex-1 bg-white">
             <View
@@ -36,6 +38,7 @@ const Mood = () => {
                     />
                 </TouchableOpacity>
             </View>
+
         </View>
     )
 }

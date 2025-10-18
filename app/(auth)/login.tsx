@@ -1,7 +1,9 @@
 import {View, Text, TextInput, TouchableOpacity, Image} from "react-native";
 import {Link, router} from "expo-router";
+import {useState} from "react";
 
 export default function LoginScreen() {
+    const [loading, setLoading] = useState(true);
     return (
         <View className="flex-1 justify-center items-center bg-blue-100 p-6">
             <View className="flex-row items-center justify-around mb-6">
@@ -64,7 +66,8 @@ export default function LoginScreen() {
                         <Text>Don't have an account? </Text>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={() => router.push("/signup")}>
+                        <TouchableOpacity
+                            onPress={() => router.push("/signup")}>
                             <Text className="text-blue-500 underline text">
                                 Sign Up.
                             </Text>
