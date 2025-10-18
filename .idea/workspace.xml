@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="LOGIN AND SIGNUP UI UPDATE">
-      <change afterPath="$PROJECT_DIR$/app/SplashScreen.tsx" afterDir="false" />
+    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="SPLASHSCREEN UPDATE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/mood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/mood.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -112,7 +107,7 @@
       <workItem from="1760374907279" duration="48436000" />
       <workItem from="1760570620715" duration="14255000" />
       <workItem from="1760585398656" duration="938000" />
-      <workItem from="1760587180994" duration="56881000" />
+      <workItem from="1760587180994" duration="67039000" />
     </task>
     <task id="LOCAL-00001" summary="First progress react native TIP care app">
       <option name="closed" value="true" />
@@ -170,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760695257998</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="SPLASHSCREEN UPDATE">
+      <option name="closed" value="true" />
+      <created>1760763175020</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760763175020</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +187,7 @@
     <MESSAGE value="JOURNAL PAGE UPDATE (NOT FINISHED)" />
     <MESSAGE value="JOURNAL AND CLINICS PAGE UI UPDATE" />
     <MESSAGE value="LOGIN AND SIGNUP UI UPDATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="LOGIN AND SIGNUP UI UPDATE" />
+    <MESSAGE value="SPLASHSCREEN UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="SPLASHSCREEN UPDATE" />
   </component>
 </project>
