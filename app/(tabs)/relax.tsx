@@ -1,3 +1,4 @@
+import { Audio } from 'expo-av';
 import { useRouter } from "expo-router";
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, Easing, Image, Modal, Pressable, Text, TouchableOpacity, View } from 'react-native';
@@ -25,6 +26,9 @@ const Relax = () => {
     const progressAnimRef = useRef<any>(null);
     const pulseAnimRef = useRef<any>(null);
     const timerRef = useRef<any>(null);
+
+    // Audio sound ref
+    const soundRef = useRef<Audio.Sound | null>(null);
 
     // circle config
     const radius = 120;
@@ -66,6 +70,45 @@ const Relax = () => {
         }
     }, [timeLeft, isActive, totalSeconds]);
 
+    // ensure audio unload on unmount
+    useEffect(() => {
+        return () => {
+            // stop timers / animations
+            stopAll();
+            // unload audio if still loaded
+            if (soundRef.current) {
+                soundRef.current.unloadAsync().catch(() => {});
+                soundRef.current = null;
+            }
+        };
+    }, []);
+
+    const playSound = async () => {
+        try {
+            // adjust the path to your file. Place a file at: src/assets/sounds/relax_loop.mp3 (or similar)
+            const asset = require('@/assets/sounds/relax_loop.mp3');
+            const { sound } = await Audio.Sound.createAsync(
+                asset,
+                { isLooping: true, volume: 0.6, shouldPlay: true }
+            );
+            soundRef.current = sound;
+            // already playing because shouldPlay:true; ensure started
+            await sound.playAsync().catch(() => {});
+        } catch (e) {
+            // ignore audio errors silently
+        }
+    };
+
+    const stopSound = async () => {
+        try {
+            if (soundRef.current) {
+                await soundRef.current.stopAsync().catch(() => {});
+                await soundRef.current.unloadAsync().catch(() => {});
+                soundRef.current = null;
+            }
+        } catch {}
+    };
+
     const stopAll = () => {
         try {
             progressAnimRef.current?.stop?.();
@@ -77,6 +120,8 @@ const Relax = () => {
             clearInterval(timerRef.current);
             timerRef.current = null;
         }
+        // stop/unload audio (async, call without await)
+        stopSound().catch(() => {});
     };
 
     const startPulseAnimation = () => {
@@ -113,6 +158,9 @@ const Relax = () => {
         setTimeLeft(totalSeconds);
         setBreatheText("Breathe In");
 
+        // start audio
+        playSound().catch(() => {});
+
         // reset and start progress animation (fills/empties over totalSeconds)
         progress.setValue(0);
         const progAnim = Animated.timing(progress, {
@@ -125,7 +173,7 @@ const Relax = () => {
         progAnim.start(({ finished }) => {
             if (finished) {
                 setIsActive(false);
-                setBreatheText("Complete! Press Start to begin again");
+                setBreatheText("Complete! Go again?");
                 stopAll();
             }
         });
