@@ -7,8 +7,6 @@ import { Circle, Svg } from 'react-native-svg';
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 const Relax = () => {
-    const router = useRouter();
-    // user-selectable total seconds (default 3 minutes)
     const [totalSeconds, setTotalSeconds] = useState(180);
     const [isActive, setIsActive] = useState(false);
     const [timeLeft, setTimeLeft] = useState(totalSeconds);
