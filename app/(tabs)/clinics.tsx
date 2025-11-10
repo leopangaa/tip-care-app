@@ -49,24 +49,9 @@ const Clinics = () => {
                         </View>
                     </View>
                 </View>
-
-
-                <TouchableOpacity
-                    className="w-10 h-10 rounded-full bg-white justify-center items-center shadow mt-4">
-                    <Image
-                        source={require("@/assets/icons/profile.png")}
-                        className="w-9 h-9"
-                        resizeMode="contain"
-                        tintColor="#0077CC"
-                    />
-                </TouchableOpacity>
             </View>
 
             <View className="p-5">
-                <SearchBar
-                    placeholder="Search clinics"
-                />
-
                 <ScrollView
                     className="space-y-6 p-2"
                     contentContainerStyle={{
@@ -76,7 +61,7 @@ const Clinics = () => {
                     showsVerticalScrollIndicator={false}
                 >
                     {/* NCMH Card */}
-                    <View className="bg-white rounded-2xl p-6 shadow-lg mb-4">
+                    <View className="bg-white rounded-2xl p-6 mb-4 shadow">
                         <View className="flex-row items-center">
                             <TouchableOpacity>
                                 <Text className="text-[#0077CC] font-semibold text-[20px]">
@@ -139,7 +124,7 @@ const Clinics = () => {
                     </View>
 
                     {/* PMHA Card */}
-                    <View className="bg-white rounded-2xl p-6 shadow-lg mb-4">
+                    <View className="bg-white rounded-2xl p-6 mb-4 shadow">
                         <View className="flex-row items-center">
                             <TouchableOpacity>
                                 <Text className="text-[#0077CC] font-semibold text-[20px]">
@@ -202,7 +187,7 @@ const Clinics = () => {
                     </View>
 
                     {/* iPsych Inc. Card */}
-                    <View className="bg-white rounded-2xl p-6 shadow-lg mb-4">
+                    <View className="bg-white rounded-2xl p-6 shadow mb-4">
                         <View className="flex-row items-center">
                             <TouchableOpacity>
                                 <Text className="text-[#0077CC] font-semibold text-[20px]">
@@ -265,7 +250,7 @@ const Clinics = () => {
                     </View>
 
                     {/* MindCare Club Card */}
-                    <View className="bg-white rounded-2xl p-6 shadow-lg mb-4">
+                    <View className="bg-white rounded-2xl p-6 shadow mb-4">
                         <View className="flex-row items-center">
                             <TouchableOpacity>
                                 <Text className="text-[#0077CC] font-semibold text-[20px]">
@@ -328,7 +313,7 @@ const Clinics = () => {
                     </View>
 
                     {/* Metro Psych Facility Card */}
-                    <View className="bg-white rounded-2xl p-6 shadow-lg mb-4">
+                    <View className="bg-white rounded-2xl p-6 shadow mb-4">
                         <View className="flex-row items-center">
                             <TouchableOpacity>
                                 <Text className="text-[#0077CC] font-semibold text-[20px]">

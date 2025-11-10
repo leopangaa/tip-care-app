@@ -311,9 +311,6 @@ const Index = () => {
                                                 {user?.fullName || "Not set"}
                                             </Text>
                                         </View>
-                                        <TouchableOpacity className="p-2">
-                                            <Text className="text-[#0077CC] text-sm font-semibold">Edit</Text>
-                                        </TouchableOpacity>
                                     </View>
 
                                     <View className="flex-row justify-between items-center py-2 border-b border-gray-100">
@@ -323,9 +320,6 @@ const Index = () => {
                                                 @{user?.username || "Not set"}
                                             </Text>
                                         </View>
-                                        <TouchableOpacity className="p-2">
-                                            <Text className="text-[#0077CC] text-sm font-semibold">Edit</Text>
-                                        </TouchableOpacity>
                                     </View>
                                 </View>
                             </View>

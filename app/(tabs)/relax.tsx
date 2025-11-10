@@ -12,23 +12,17 @@ const Relax = () => {
     const [timeLeft, setTimeLeft] = useState(totalSeconds);
     const [breatheText, setBreatheText] = useState("Press Start");
 
-    // show/hide duration picker modal
     const [showPicker, setShowPicker] = useState(false);
 
-    // progress drives the circular progress ring (0 -> 1 over totalSeconds)
     const progress = useRef(new Animated.Value(0)).current;
-    // pulse drives the breathing pulse animation (scale)
     const pulse = useRef(new Animated.Value(0)).current;
 
-    // refs to hold running animations / timer so we can stop them
     const progressAnimRef = useRef<any>(null);
     const pulseAnimRef = useRef<any>(null);
     const timerRef = useRef<any>(null);
 
-    // Audio sound ref
     const soundRef = useRef<Audio.Sound | null>(null);
 
-    // circle config
     const radius = 120;
     const strokeWidth = 6;
     const diameter = radius * 2;
@@ -48,17 +42,15 @@ const Relax = () => {
     };
 
     useEffect(() => {
-        // whenever totalSeconds changes ensure timeLeft follows when idle
         if (!isActive) {
             setTimeLeft(totalSeconds);
         }
     }, [totalSeconds]);
 
     useEffect(() => {
-        // Update breathe text based on where we are in the 12s breathing cycle
         if (!isActive) return;
         const elapsed = totalSeconds - timeLeft;
-        const cyclePos = elapsed % 12; // 0..11.999...
+        const cyclePos = elapsed % 12;
         if (cyclePos < 4) {
             setBreatheText("Breathe In");
         } else if (cyclePos < 8) {
@@ -68,12 +60,9 @@ const Relax = () => {
         }
     }, [timeLeft, isActive, totalSeconds]);
 
-    // ensure audio unload on unmount
     useEffect(() => {
         return () => {
-            // stop timers / animations
             stopAll();
-            // unload audio if still loaded
             if (soundRef.current) {
                 soundRef.current.unloadAsync().catch(() => {});
                 soundRef.current = null;
@@ -83,17 +72,14 @@ const Relax = () => {
 
     const playSound = async () => {
         try {
-            // adjust the path to your file. Place a file at: src/assets/sounds/relax_loop.mp3 (or similar)
             const asset = require('@/assets/sounds/relax_loop.mp3');
             const { sound } = await Audio.Sound.createAsync(
                 asset,
                 { isLooping: true, volume: 0.6, shouldPlay: true }
             );
             soundRef.current = sound;
-            // already playing because shouldPlay:true; ensure started
             await sound.playAsync().catch(() => {});
         } catch (e) {
-            // ignore audio errors silently
         }
     };
 
@@ -118,7 +104,6 @@ const Relax = () => {
             clearInterval(timerRef.current);
             timerRef.current = null;
         }
-        // stop/unload audio (async, call without await)
         stopSound().catch(() => {});
     };
 
@@ -159,13 +144,12 @@ const Relax = () => {
         // start audio
         playSound().catch(() => {});
 
-        // reset and start progress animation (fills/empties over totalSeconds)
         progress.setValue(0);
         const progAnim = Animated.timing(progress, {
             toValue: 1,
             duration: totalSeconds * 1000,
             easing: Easing.linear,
-            useNativeDriver: false, // strokeDashoffset cannot use native driver
+            useNativeDriver: false
         });
         progressAnimRef.current = progAnim;
         progAnim.start(({ finished }) => {
@@ -176,10 +160,8 @@ const Relax = () => {
             }
         });
 
-        // start the pulsing circle animation
         startPulseAnimation();
 
-        // start countdown timer
         timerRef.current = setInterval(() => {
             setTimeLeft(prev => {
                 if (prev <= 1) {
@@ -196,7 +178,6 @@ const Relax = () => {
         }, 1000);
     };
 
-    // STOP and reset to idle state (do NOT restart)
     const stopAndReset = () => {
         stopAll();
         progress.setValue(0);
@@ -208,9 +189,7 @@ const Relax = () => {
         setBreatheText("Press Start");
     };
 
-    // user selects a duration from picker
     const onSelectDuration = (secs: number) => {
-        // stop any running session and apply new duration
         stopAndReset();
         setTotalSeconds(secs);
         setShowPicker(false);
@@ -218,10 +197,9 @@ const Relax = () => {
 
     const strokeDashoffset = progress.interpolate({
         inputRange: [0, 1],
-        outputRange: [0, circumference], // will animate the ring "drawing" / "erasing"
+        outputRange: [0, circumference],
     });
 
-    // pulse scale interpolation (slight scale around 1)
     const scale = pulse.interpolate({
         inputRange: [0, 1],
         outputRange: [1, 1.15],
@@ -251,16 +229,6 @@ const Relax = () => {
                         </View>
                     </View>
                 </View>
-
-                <TouchableOpacity
-                    className="w-10 h-10 rounded-full bg-white justify-center items-center shadow mt-4">
-                    <Image
-                        source={require("@/assets/icons/profile.png")}
-                        className="w-9 h-9"
-                        resizeMode="contain"
-                        tintColor="#0077CC"
-                    />
-                </TouchableOpacity>
             </View>
 
             <View className="flex-1 items-center justify-center">

@@ -15,7 +15,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type Entry = {
-    id: string; // unique identifier
+    id: string;
     title: string;
     content: string;
     date: string;
@@ -32,7 +32,6 @@ const Journal = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const STORAGE_KEY = "@journal_entries";
 
-    // Load entries on start
     useEffect(() => {
         loadEntries();
     }, []);
@@ -43,7 +42,6 @@ const Journal = () => {
             if (savedEntries) {
                 const parsed: Entry[] = JSON.parse(savedEntries);
 
-                // ✅ Assign new IDs if missing (fixes duplicate key warning)
                 const updated = parsed.map((entry) => ({
                     id: entry.id || Date.now().toString() + Math.random().toString(36).substring(2, 9),
                     title: entry.title,
@@ -52,7 +50,7 @@ const Journal = () => {
                 }));
 
                 setEntries(updated);
-                await saveEntriesToStorage(updated); // save updated IDs back
+                await saveEntriesToStorage(updated);
             }
         } catch (error) {
             console.error("Failed to load entries:", error);
@@ -108,7 +106,6 @@ const Journal = () => {
                     : entry
             );
         } else {
-            // Add new
             const newEntry: Entry = {
                 id: Date.now().toString(),
                 title: entryTitle.trim() || `Journal Entry #${entries.length + 1}`,
@@ -163,15 +160,6 @@ const Journal = () => {
                         </Text>
                     </View>
                 </View>
-
-                <TouchableOpacity className="w-10 h-10 rounded-full bg-white justify-center items-center shadow mt-4">
-                    <Image
-                        source={require("@/assets/icons/profile.png")}
-                        className="w-9 h-9"
-                        resizeMode="contain"
-                        tintColor="#0077CC"
-                    />
-                </TouchableOpacity>
             </View>
 
             {/* Search & Add */}
@@ -202,7 +190,7 @@ const Journal = () => {
                         <TouchableOpacity
                             key={entry.id}
                             onPress={() => openEditEntry(entry.id)}
-                            className="bg-white rounded-2xl p-4 mt-5"
+                            className="bg-white rounded-2xl p-4 mt-5 border"
                         >
                             <View className="flex-row items-center justify-between">
                                 <Text className="text-[#0077CC] font-semibold text-[18px]">

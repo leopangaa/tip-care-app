@@ -155,18 +155,6 @@ const Mood = () => {
                         </View>
                     </View>
                 </View>
-
-
-                <TouchableOpacity
-                    className="w-10 h-10 rounded-full bg-white justify-center items-center shadow mt-4">
-                    <Image
-                        source={require("@/assets/icons/profile.png")}
-                        className="w-9 h-9"
-                        resizeMode="contain"
-                        tintColor="#0077CC"
-                    />
-                </TouchableOpacity>
-                
             </View>
 
             <ScrollView
