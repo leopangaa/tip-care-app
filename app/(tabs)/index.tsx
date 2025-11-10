@@ -1,10 +1,13 @@
 import {View, Text, Image, TouchableOpacity, ScrollView, Modal} from "react-native";
 import {useRouter} from "expo-router";
 import {logout} from ".././utils/authStorage";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {getCurrentUser, User} from "@/app/utils/userStorage";
 
 const Index = () => {
     const router = useRouter();
+    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState<User | null>(null);
 
     const today = new Date();
 
@@ -15,12 +18,35 @@ const Index = () => {
         day: "numeric",
     });
 
+    const getMemberSince = () => {
+        return new Date().toLocaleDateString('en-US', {
+            month: 'long',
+            year: 'numeric'
+        });
+    };
+
     const handleLogout = async () => {
         await logout();
         router.replace("/(auth)/login");
     };
 
     const [modalVisible, setModalVisible] = useState(false);
+    useEffect(() => {
+        if (modalVisible) {
+            loadUserData();
+        }
+    }, [modalVisible]);
+
+    const loadUserData = async () => {
+        try {
+            const userData = await getCurrentUser();
+            setUser(userData);
+        } catch (error) {
+            console.error("Error loading user data:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <View className="flex-1 bg-blue-100">
@@ -208,14 +234,13 @@ const Index = () => {
                     </View>
                 </View>
             </ScrollView>
-            <Modal animationType="slide"
-                   transparent={true}
-                   visible={modalVisible}
-                   onRequestClose={() => {
-                       setModalVisible(!modalVisible);
-                   }}
+            <Modal
+                animationType="slide"
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(false)}
             >
                 <View className="flex-1 bg-blue-100">
+                    {/* Header */}
                     <View className="bg-[#0077CC] pt-12 flex-row">
                         <View className="p-4">
                             <TouchableOpacity
@@ -234,45 +259,111 @@ const Index = () => {
                         </View>
                     </View>
 
-                    <View className="flex-row justify-center">
-                        <View className="flex-1 bg-blue-100 px-6 pt-12">
-                            <View className="items-center mb-6">
-                                <Image
-                                    source={require("@/assets/icons/profile.png")}
-                                    className="w-24 h-24 rounded-full mb-4"
-                                    resizeMode="contain"
-                                    tintColor="#0077CC"
-                                />
-                                <Text className="text-2xl font-extrabold text-[#0077CC]">Sample User</Text>
-                                <Text className="text-sm text-gray-600 mt-1">sample@example.com</Text>
-                                <Text className="text-xs text-gray-500 mt-1">Member since March 2024</Text>
-                            </View>
-
-                            {/* Info Card */}
-                            <View className="bg-white rounded-xl p-5 shadow space-y-4 mb-6">
-                                <View>
-                                    <Text className="text-gray-700 font-semibold">Phone Number</Text>
-                                    <Text className="text-gray-500">+63 912 345 6789</Text>
+                    {/* Content */}
+                    <View className="flex-1 px-6 pt-8 pb-6">
+                        {/* Profile Header */}
+                        <View className="items-center mb-8">
+                            <View className="relative mb-4">
+                                <View className="w-28 h-28 rounded-full bg-gradient-to-r from-[#0077CC] to-[#0096FF] justify-center items-center shadow-lg">
+                                    <Image
+                                        source={require("@/assets/icons/profile.png")}
+                                        className="w-24 h-24 rounded-full mb-4"
+                                        resizeMode="contain"
+                                        tintColor="#0077CC"
+                                    />
                                 </View>
-
-                                <View>
-                                    <Text className="text-gray-700 font-semibold">Location</Text>
-                                    <Text className="text-gray-500">Taytay, Rizal, Philippines</Text>
-                                </View>
-
-                                <View>
-                                    <Text className="text-gray-700 font-semibold">Account Status</Text>
-                                    <Text className="text-green-600 font-semibold">Active</Text>
+                                <View className="absolute -bottom-2 -right-2 bg-green-500 rounded-full p-1 border-2 border-white">
+                                    <View className="w-6 h-6 rounded-full bg-green-400 justify-center items-center">
+                                        <Text className="text-white text-xs font-bold">✓</Text>
+                                    </View>
                                 </View>
                             </View>
 
-                            <TouchableOpacity
-                                onPress={handleLogout}
-                                className="bg-red-500 rounded-full py-3 items-center"
-                            >
-                                <Text className="text-white font-bold">Logout</Text>
-                            </TouchableOpacity>
+                            <Text className="text-3xl font-bold text-gray-800 text-center mb-1">
+                                {user?.fullName || "Guest User"}
+                            </Text>
+                            <Text className="text-lg text-gray-600 mb-2">
+                                @{user?.username || "username"}
+                            </Text>
+                            <View className="bg-blue-100 rounded-full px-4 py-1">
+                                <Text className="text-[#0077CC] text-xs font-semibold">
+                                    Member since {getMemberSince()}
+                                </Text>
+                            </View>
                         </View>
+
+                        {/* Info Cards */}
+                        <View className="space-y-4 mb-8">
+                            {/* Personal Info Card */}
+                            <View className="bg-white rounded-2xl p-5 mb-4 shadow-sm border border-gray-100">
+                                <View className="flex-row items-center mb-3">
+                                    <View className="w-8 h-8 bg-blue-100 rounded-lg justify-center items-center mr-3">
+                                        <Text className="text-[#0077CC] text-lg font-bold">i</Text>
+                                    </View>
+                                    <Text className="text-lg font-bold text-gray-800">Personal Information</Text>
+                                </View>
+
+                                <View className="space-y-3">
+                                    <View className="flex-row justify-between items-center py-2 border-b border-gray-100">
+                                        <View>
+                                            <Text className="text-gray-500 text-sm">Full Name</Text>
+                                            <Text className="text-gray-800 font-semibold">
+                                                {user?.fullName || "Not set"}
+                                            </Text>
+                                        </View>
+                                        <TouchableOpacity className="p-2">
+                                            <Text className="text-[#0077CC] text-sm font-semibold">Edit</Text>
+                                        </TouchableOpacity>
+                                    </View>
+
+                                    <View className="flex-row justify-between items-center py-2 border-b border-gray-100">
+                                        <View>
+                                            <Text className="text-gray-500 text-sm">Username</Text>
+                                            <Text className="text-gray-800 font-semibold">
+                                                @{user?.username || "Not set"}
+                                            </Text>
+                                        </View>
+                                        <TouchableOpacity className="p-2">
+                                            <Text className="text-[#0077CC] text-sm font-semibold">Edit</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </View>
+
+                            {/* Account Status Card */}
+                            <View className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                                <View className="flex-row items-center mb-3">
+                                    <View className="w-8 h-8 bg-green-100 rounded-lg justify-center items-center mr-3">
+                                        <Text className="text-green-600 text-lg font-bold">✓</Text>
+                                    </View>
+                                    <Text className="text-lg font-bold text-gray-800">Account Status</Text>
+                                </View>
+
+                                <View className="flex-row justify-between items-center">
+                                    <View>
+                                        <Text className="text-gray-500 text-sm">Status</Text>
+                                        <Text className="text-green-600 font-bold text-base">Active</Text>
+                                    </View>
+                                    <View className="bg-green-100 rounded-full px-3 py-1">
+                                        <Text className="text-green-700 text-xs font-semibold">Verified</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+
+                        {/* Logout Button */}
+                        <TouchableOpacity
+                            onPress={handleLogout}
+                            className="bg-red-500 rounded-full py-3 flex-row justify-center items-center shadow-lg"
+                        >
+                            <Image
+                                source={require("@/assets/icons/logout.png")}
+                                className="w-5 h-5 mr-2"
+                                resizeMode="contain"
+                                tintColor="#FFFFFF"
+                            />
+                            <Text className="text-white font-bold text-lg">Logout</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </Modal>

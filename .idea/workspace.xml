@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="INDEX AND JOURNAL POLISH">
+    <list default="true" id="0cbdc3f4-7e13-4f7a-ad14-dbe211fb6a58" name="Changes" comment="DEPENDENCIES">
+      <change afterPath="$PROJECT_DIR$/app/utils/userStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/logout.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/signup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/authStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/authStorage.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +128,7 @@
       <workItem from="1762303374964" duration="6438000" />
       <workItem from="1762326822426" duration="2595000" />
       <workItem from="1762771862192" duration="245000" />
-      <workItem from="1762774445187" duration="508000" />
+      <workItem from="1762774445187" duration="4184000" />
     </task>
     <task id="LOCAL-00001" summary="First progress react native TIP care app">
       <option name="closed" value="true" />
@@ -230,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762328619086</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="DEPENDENCIES">
+      <option name="closed" value="true" />
+      <created>1762775064000</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1762775064000</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +285,7 @@
     <MESSAGE value="POLISH PROFILE" />
     <MESSAGE value="ASYNC STORAGE FOR JOURNAL" />
     <MESSAGE value="INDEX AND JOURNAL POLISH" />
-    <option name="LAST_COMMIT_MESSAGE" value="INDEX AND JOURNAL POLISH" />
+    <MESSAGE value="DEPENDENCIES" />
+    <option name="LAST_COMMIT_MESSAGE" value="DEPENDENCIES" />
   </component>
 </project>

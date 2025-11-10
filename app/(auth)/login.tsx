@@ -1,20 +1,36 @@
 import {View, Text, TextInput, TouchableOpacity, Image, Alert} from "react-native";
-import {Link, router} from "expo-router";
+import {router} from "expo-router";
 import {useState} from "react";
 import {setLoggedIn} from "@/app/utils/authStorage";
-import {replace} from "expo-router/build/global-state/routing";
+import {verifyUser, setCurrentUser} from "@/app/utils/userStorage";
 
 export default function LoginScreen() {
-
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleLogin = async () => {
-        if(username && password){
-            await setLoggedIn(true);
-            router.replace("/(tabs)");
-        } else {
-            Alert.alert("Username and password are required!");
+        if (!username || !password) {
+            Alert.alert("Error", "Username and password are required!");
+            return;
+        }
+
+        setIsLoading(true);
+
+        try {
+            const user = await verifyUser(username, password);
+
+            if (user) {
+                await setCurrentUser(user);
+                await setLoggedIn(true);
+                router.replace("/(tabs)");
+            } else {
+                Alert.alert("Error", "Invalid username or password!");
+            }
+        } catch (error) {
+            Alert.alert("Error", "Failed to login. Please try again.");
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -35,7 +51,7 @@ export default function LoginScreen() {
                         <TouchableOpacity onPress={() => router.push("/login")} className="bg-white rounded-2xl py-2 px-12 mr-3 flex">
                             <Text>LOGIN</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity  onPress={() => router.push("/signup")} className="py-2 px-12 mr-2 flex">
+                        <TouchableOpacity onPress={() => router.push("/signup")} className="py-2 px-12 mr-2 flex">
                             <Text>SIGNUP</Text>
                         </TouchableOpacity>
                     </View>
@@ -50,6 +66,7 @@ export default function LoginScreen() {
                                 placeholderTextColor="gray"
                                 value={username}
                                 onChangeText={setUsername}
+                                editable={!isLoading}
                             />
                         </View>
                     </View>
@@ -65,23 +82,31 @@ export default function LoginScreen() {
                                 secureTextEntry={true}
                                 value={password}
                                 onChangeText={setPassword}
+                                editable={!isLoading}
                             />
                         </View>
                     </View>
                 </View>
                 <View>
-                    <TouchableOpacity onPress={handleLogin}
-                                      className="bg-[#0077CC] py-2 px-20 rounded-xl w-full mb-3">
-                        <Text className="text-white font-semibold text-[17px]">Log In</Text>
+                    <TouchableOpacity
+                        onPress={handleLogin}
+                        disabled={isLoading}
+                        className="bg-[#0077CC] py-2 px-20 rounded-xl w-full mb-3"
+                    >
+                        <Text className="text-white font-semibold text-[17px] text-center">
+                            {isLoading ? "Logging in..." : "Log In"}
+                        </Text>
                     </TouchableOpacity>
                 </View>
                 <View className="flex-row items-center justify-around mb-6">
                     <View>
-                        <Text>Don't have an account? </Text>
+                        <Text>Don&#39;t have an account? </Text>
                     </View>
                     <View>
                         <TouchableOpacity
-                            onPress={() => router.push("/signup")}>
+                            onPress={() => router.push("/signup")}
+                            disabled={isLoading}
+                        >
                             <Text className="text-blue-500 underline text">
                                 Sign Up.
                             </Text>

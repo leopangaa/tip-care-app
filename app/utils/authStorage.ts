@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { clearCurrentUser } from "./userStorage";
 
 const AUTH_KEY = "user_logged_in";
 
@@ -23,6 +24,7 @@ export const isLoggedIn = async () => {
 export const logout = async () => {
     try {
         await AsyncStorage.removeItem(AUTH_KEY);
+        await clearCurrentUser();
     } catch (error) {
         console.error("Error clearing login state:", error);
     }
